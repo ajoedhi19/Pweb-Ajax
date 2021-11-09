@@ -45,17 +45,17 @@
           html += "</option>";
           idx += 1;
         }
-        document.getElementById("Provinsi").innerHTML = html;
+        document.getElementById("provinsi").innerHTML = html;
       };
-      xhttp.open("GET", "https://mocki.io/v1/dcec55fc-a839-4f5c-a0a7-15d8d77b55f3", true);
+      xhttp.open("GET", "tugas2.json", true);
       xhttp.send();
     }
 
-    function loadNegara(idx) {
+    function loadKabKota(idx) {
       const xhttp = new XMLHttpRequest();
       xhttp.onload = function () {
         const myObj = JSON.parse(this.responseText);
-        let html = "<option>Pilih Kabupaten/Kota...</option>";
+        let html = "<option>Pilih Kabupaten/Kota..</option>";
         for (let x of Object.values(myObj)[idx]) {
           html += "<option>";
           html += x;
@@ -63,7 +63,7 @@
         }
         document.getElementById("kabkota").innerHTML = html;
       };
-      xhttp.open("GET", "https://mocki.io/v1/dcec55fc-a839-4f5c-a0a7-15d8d77b55f3", true);
+      xhttp.open("GET", "tugas2.json", true);
       xhttp.send();
     }
   </script>
